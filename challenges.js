@@ -131,8 +131,30 @@ Result:
 -----------------------------------------------------------------------------*/
 // Your solution for 02- here:
 
+// iterate thru array, comparing alice and bob's number, at the same index
+    // whoever has the higher number, add 1 pt
+    // if tied, no one receives pt
+// result will be array for [alice pts, bob pts]
 
 
+function compareTriplets(alice,bob){
+  let points = [0,0]
+
+  alice.forEach((a, idx) => {
+    if (alice[idx] > bob[idx]){
+      points[0] += 1}
+    else if (alice[idx] < bob[idx]){
+      points[1] += 1
+    } else {
+      points[0] += 0
+    }
+  })
+  return points
+}
+
+console.log("compareTriplets",compareTriplets([13,33,56],[12,53,65])) // [1,2]
+console.log("compareTriplets",compareTriplets([17, 28, 30],[99, 16, 8])) // [2, 1]
+console.log("compareTriplets", compareTriplets([5, 6, 7],[3, 6, 10])) // [1,1]
 
 /*-----------------------------------------------------------------------------
 
